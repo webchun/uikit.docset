@@ -1,5 +1,4 @@
 #uikit docset for Dash
-=================
 
 This docset adds [http://getuikit.com](uikit) documentation to Dash.
 
