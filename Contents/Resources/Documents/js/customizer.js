@@ -18,7 +18,7 @@ jQuery(function($) {
             ]
         };
 
-    $iframe.css("visibility", "hidden");
+    $iframe.css("opacity", "0");
     $spinner.show();
 
     $.get("../themes/themes.json", {nocache:Math.random()}).always(function(data, type){
@@ -46,7 +46,7 @@ jQuery(function($) {
 
         $customizer.customizer($.extend({
             "updating": function(e, style) {
-                $iframe.css("visibility", "hidden");
+                $iframe.css("opacity", "0");
                 $spinner.show();
             },
             "updated": function(e, style) {
@@ -73,11 +73,11 @@ jQuery(function($) {
     $error.on({
         "show": function(e, error) {
             $error.html($.mustache("<h1 class=\"uk-h3\">LESS {{type}} Error</h1><p>{{message}}</p>", error)).show();
-            $iframe.css("visibility", "hidden");
+            $iframe.css("opacity", "0");
         },
         "hide": function() {
             $error.hide();
-            $iframe.css("visibility", "visible");
+            $iframe.css("opacity", "1");
         }
     });
 
@@ -208,7 +208,7 @@ jQuery(function($) {
 
     function downloadLESS(a, style) {
 
-        var source = [], first;
+        var source = [], first, cache = {};
 
         if (style.fonts) {
             source.push(style.fonts);
@@ -221,9 +221,14 @@ jQuery(function($) {
             $.each(grp.vars, function(i, opt) {
                 $.each(style.variables, function(name, value) {
                     if(style.matchName(opt, name)) {
-                        if (first) source.push("\n//\n// "+grp.label+"\n//\n");
-                        source.push(name + ": " + value + ";");
-                        first = false;
+
+                        if(!cache[name]) {
+
+                            if (first) source.push("\n//\n// "+grp.label+"\n//\n");
+                            source.push(name + ": " + value + ";");
+                            first = false;
+                            cache[name] = true;
+                        }
                     }
                   });
              });

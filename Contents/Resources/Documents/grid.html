@@ -30,7 +30,7 @@
                     <li><a href="customizer.html">Customizer</a></li>
                 </ul>
 
-                <a href="#tm-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+                <a href="grid.html#tm-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
 
                 <div class="uk-navbar-brand uk-navbar-center uk-visible-small"><img src="images/logo_uikit.svg" width="90" height="30" title="UIkit" alt="UIkit"></div>
 
@@ -80,7 +80,6 @@
                             <li><a href="thumbnail.html">Thumbnail</a></li>
                             <li><a href="overlay.html">Overlay</a></li>
                             <li><a href="progress.html">Progress</a></li>
-                            <li><a href="search.html">Search</a></li>
                             <li><a href="text.html">Text</a></li>
                             <li><a href="animation.html">Animation</a></li>
 
@@ -208,6 +207,10 @@
                                         <td>Affects all device widths, grid columns stay side by side.</td>
                                     </tr>
                                     <tr>
+                                        <td><code>.uk-width-small-*</code></td>
+                                        <td>Affects device widths of <em>480px</em> and higher. Grid columns will stack on smaller sizes.</td>
+                                    </tr>
+                                    <tr>
                                         <td><code>.uk-width-medium-*</code></td>
                                         <td>Affects device widths of <em>768px</em> and higher. Grid columns will stack on smaller sizes.</td>
                                     </tr>
@@ -251,6 +254,20 @@
                             <h3 class="tm-article-subtitle">Example</h3>
 
                             <div class="uk-grid uk-grid-preserve">
+                                <div class="uk-width-1-3"><div class="uk-panel uk-panel-box uk-panel-box-primary">Lorem ipsum</div></div>
+                                <div class="uk-width-1-3"><div class="uk-panel uk-panel-box uk-panel-box-primary">Lorem ipsum</div></div>
+                                <div class="uk-width-1-3"><div class="uk-panel uk-panel-box uk-panel-box-primary">Lorem ipsum</div></div>
+                            </div>
+
+                            <hr class="uk-article-divider">
+
+                            <h3>Small gutter</h3>
+
+                            <p>To apply a smaller gutter between grid columns, just add the <code>.uk-grid-small</code> class.</p>
+
+                            <h4 class="tm-article-subtitle">Example</h4>
+
+                            <div class="uk-grid uk-grid-small">
                                 <div class="uk-width-1-3"><div class="uk-panel uk-panel-box uk-panel-box-primary">Lorem ipsum</div></div>
                                 <div class="uk-width-1-3"><div class="uk-panel uk-panel-box uk-panel-box-primary">Lorem ipsum</div></div>
                                 <div class="uk-width-1-3"><div class="uk-panel uk-panel-box uk-panel-box-primary">Lorem ipsum</div></div>
@@ -407,6 +424,29 @@
 
                             <hr class="uk-article-divider">
 
+                            <h3>Match only within rows</h3>
+
+                            <p>If your grid wraps into multiple rows, you can also match only grid columns within the same row. Just add the <code>row: true</code> option to the <code>data-uk-grid-match="{target:'.uk-panel'}"</code> attribute.</p>
+
+                            <h4 class="tm-article-subtitle">Example</h4>
+
+                            <ul class="uk-grid uk-text-center" data-uk-grid-match="{target:'.uk-panel', row: true}" data-uk-grid-margin>
+                                <li class="uk-width-medium-1-3"><div class="uk-panel uk-panel-box">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div></li>
+                                <li class="uk-width-medium-1-3"><div class="uk-panel uk-panel-box">Lorem ipsum dolor.</div></li>
+                                <li class="uk-width-medium-1-3"><div class="uk-panel uk-panel-box">Lorem ipsum dolor.</div></li>
+                                <li class="uk-width-medium-1-3"><div class="uk-panel uk-panel-box">Lorem ipsum dolor.</div></li>
+                                <li class="uk-width-medium-1-3"><div class="uk-panel uk-panel-box">Lorem ipsum dolor.</div></li>
+                                <li class="uk-width-medium-1-3"><div class="uk-panel uk-panel-box">Lorem ipsum dolor.</div></li>
+                            </ul>
+
+                            <h3 class="tm-article-subtitle">Markup</h3>
+
+<pre><code>&lt;ul class="uk-grid" data-uk-grid-match="{target:'.uk-panel', row: true}"&gt;
+    &lt;li class="uk-width-medium-1-3"&gt;... &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                            <hr class="uk-article-divider">
+
                             <h2>Wrap multiple rows</h2>
 
                             <p>You can also create a grid with as many columns as you want, which automatically break into the next line. Just add the <code>data-uk-grid-margin</code> attribute to create a margin between the grid rows. Typically this layout is built using a <code>&lt;ul&gt;</code> element.</p>
@@ -422,17 +462,17 @@
                                 <li class="uk-width-medium-1-3"><div class="uk-panel uk-panel-box">Box</div></li>
                             </ul>
 
-                            <p><span class="uk-badge">NOTE</span> You can also apply a custom width to your grid columns. Just add the <code>.uk-width-custom</code> class and use an inline style to define the width. This example uses fixed pixel values for the widths as you would do with images.</p>
+                            <p><span class="uk-badge">NOTE</span> You can also apply a custom width to your grid columns. Just add the <code>.uk-width</code> class and use an inline style to define the width. This example uses fixed pixel values for the widths as you would do with images.</p>
 
                             <ul class="uk-grid uk-text-center" data-uk-grid-margin>
-                                <li class="uk-width-custom" style="width: 100px;"><div class="uk-panel uk-panel-box">Box</div></li>
-                                <li class="uk-width-custom" style="width: 120px;"><div class="uk-panel uk-panel-box">Box</div></li>
-                                <li class="uk-width-custom" style="width: 140px;"><div class="uk-panel uk-panel-box">Box</div></li>
-                                <li class="uk-width-custom" style="width: 160px;"><div class="uk-panel uk-panel-box">Box</div></li>
-                                <li class="uk-width-custom" style="width: 180px;"><div class="uk-panel uk-panel-box">Box</div></li>
-                                <li class="uk-width-custom" style="width: 200px;"><div class="uk-panel uk-panel-box">Box</div></li>
-                                <li class="uk-width-custom" style="width: 220px;"><div class="uk-panel uk-panel-box">Box</div></li>
-                                <li class="uk-width-custom" style="width: 240px;"><div class="uk-panel uk-panel-box">Box</div></li>
+                                <li class="uk-width" style="width: 100px;"><div class="uk-panel uk-panel-box">Box</div></li>
+                                <li class="uk-width" style="width: 120px;"><div class="uk-panel uk-panel-box">Box</div></li>
+                                <li class="uk-width" style="width: 140px;"><div class="uk-panel uk-panel-box">Box</div></li>
+                                <li class="uk-width" style="width: 160px;"><div class="uk-panel uk-panel-box">Box</div></li>
+                                <li class="uk-width" style="width: 180px;"><div class="uk-panel uk-panel-box">Box</div></li>
+                                <li class="uk-width" style="width: 200px;"><div class="uk-panel uk-panel-box">Box</div></li>
+                                <li class="uk-width" style="width: 220px;"><div class="uk-panel uk-panel-box">Box</div></li>
+                                <li class="uk-width" style="width: 240px;"><div class="uk-panel uk-panel-box">Box</div></li>
                             </ul>
 
                             <h4 class="tm-article-subtitle">Markup</h4>
@@ -440,13 +480,125 @@
 <pre><code>&lt;ul class="uk-grid" data-uk-grid-margin&gt;
 
     &lt;!-- These elements have a width in percent --&gt;
-    &lt;li class="uk-width-medium-1-5""&gt;...&lt;/li&gt;
-    &lt;li class="uk-width-medium-3-10""&gt;...&lt;/li&gt;
+    &lt;li class="uk-width-medium-1-5"&gt;...&lt;/li&gt;
+    &lt;li class="uk-width-medium-3-10"&gt;...&lt;/li&gt;
 
     &lt;!-- These elements have a width in pixel --&gt;
-    &lt;li class="uk-width-custom" style="width: 100px;"&gt;...&lt;/li&gt;
-    &lt;li class="uk-width-custom" style="width: 150px;"&gt;...&lt;/li&gt;
+    &lt;li class="uk-width" style="width: 100px;"&gt;...&lt;/li&gt;
+    &lt;li class="uk-width" style="width: 150px;"&gt;...&lt;/li&gt;
 
+&lt;/ul&gt;</code></pre>
+
+                            <hr class="uk-article-divider">
+
+                            <h2>Even grid columns</h2>
+
+                            <p>To create a grid whose child elements' widths are evenly split, you don't have to apply the same class to each list item within the grid. Just add one of the <code>.uk-grid-width-*</code> classes to the grid itself.</p>
+
+                            <table class="uk-table">
+                                <thead>
+                                    <tr>
+                                        <th>Class</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>.uk-grid-width-1-2</code></td>
+                                        <td>Divides the grid into halves.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.uk-grid-width-1-3</code></td>
+                                        <td>Divides the grid into thirds.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.uk-grid-width-1-4</code></td>
+                                        <td>Divides the grid into fourths.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.uk-grid-width-1-5</code></td>
+                                        <td>Divides the grid into fifths.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.uk-grid-width-1-6</code></td>
+                                        <td>Divides the grid into sixths.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.uk-grid-width-1-10</code></td>
+                                        <td>Divides the grid into tenths.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h3 class="tm-article-subtitle">Example</h3>
+
+                            <ul class="uk-grid uk-grid-width-1-5 uk-text-center">
+                                <li><div class="uk-panel uk-panel-box">Box</div></li>
+                                <li><div class="uk-panel uk-panel-box">Box</div></li>
+                                <li><div class="uk-panel uk-panel-box">Box</div></li>
+                                <li><div class="uk-panel uk-panel-box">Box</div></li>
+                                <li><div class="uk-panel uk-panel-box">Box</div></li>
+                            </ul>
+
+                            <h3 class="tm-article-subtitle">Markup</h3>
+
+<pre><code>&lt;ul class="uk-grid uk-grid-width-1-5"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                            <hr class="uk-article-divider">
+
+                            <h3>Responsive width</h3>
+
+                            <p>UIkit also provides responsive grid width classes. You can apply these to maintain evenly sized grid columns, regardless of the device width.</p>
+
+                            <table class="uk-table">
+                                <thead>
+                                    <tr>
+                                        <th>Class</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>.uk-grid-width-*</code></td>
+                                        <td>Affects all device widths.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.uk-grid-width-small-*</code></td>
+                                        <td>Affects device widths of <em>480px</em> and higher.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.uk-grid-width-medium-*</code></td>
+                                        <td>Affects device widths of <em>768px</em> and higher.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.uk-grid-width-large-*</code></td>
+                                        <td>Affects device widths of <em>960px</em> and higher.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>.uk-grid-width-xlarge-*</code></td>
+                                        <td>Affects device widths of <em>1220px</em> and higher.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h3 class="tm-article-subtitle">Example</h3>
+
+                            <ul class="uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5 uk-text-center" data-uk-grid-margin>
+                                <li><div class="uk-panel uk-panel-box">Box</li>
+                                <li><div class="uk-panel uk-panel-box">Box</li>
+                                <li><div class="uk-panel uk-panel-box">Box</li>
+                                <li><div class="uk-panel uk-panel-box">Box</li>
+                                <li><div class="uk-panel uk-panel-box">Box</li>
+                            </ul>
+
+                            <h3 class="tm-article-subtitle">Markup</h3>
+
+<pre><code>&lt;ul class="uk-grid uk-grid-width-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 
                         </article>
@@ -480,27 +632,29 @@
             <div class="uk-offcanvas-bar">
 
                 <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="{multiple:true}">
-                    <li class="uk-parent"><a href="#">Documentation</a>
+                    <li class="uk-parent"><a href="grid.html#">Documentation</a>
                         <ul class="uk-nav-sub">
                             <li><a href="documentation_get-started.html">Get started</a></li>
                             <li><a href="documentation_how-to-customize.html">How to customize</a></li>
+                            <li><a href="documentation_layouts.html">Layout examples</a></li>
                             <li><a href="components.html">Components</a></li>
                             <li><a href="addons.html">Add-ons</a></li>
                             <li><a href="documentation_project-structure.html">Project structure</a></li>
                             <li><a href="documentation_create-a-theme.html">Create a theme</a></li>
                             <li><a href="documentation_create-a-style.html">Create a style</a></li>
                             <li><a href="documentation_customizer-json.html">Customizer.json</a></li>
+                            <li><a href="documentation_javascript.html">JavaScript</a></li>
                         </ul>
                     </li>
                     <li class="uk-nav-header">Components</li>
-                    <li class="uk-parent"><a href="#"><i class="uk-icon-wrench"></i> Defaults</a>
+                    <li class="uk-parent"><a href="grid.html#"><i class="uk-icon-wrench"></i> Defaults</a>
                         <ul class="uk-nav-sub">
                             <li><a href="normalize.html">Normalize</a></li>
                             <li><a href="base.html">Base</a></li>
                             <li><a href="print.html">Print</a></li>
                         </ul>
                     </li>
-                    <li class="uk-parent uk-active"><a href="#"><i class="uk-icon-th-large"></i> Layout</a>
+                    <li class="uk-parent uk-active"><a href="grid.html#"><i class="uk-icon-th-large"></i> Layout</a>
                         <ul class="uk-nav-sub">
                             <li><a href="grid.html">Grid</a></li>
                             <li><a href="panel.html">Panel</a></li>
@@ -509,7 +663,7 @@
                             <li><a href="utility.html">Utility</a></li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="#"><i class="uk-icon-bars"></i> Navigations</a>
+                    <li class="uk-parent"><a href="grid.html#"><i class="uk-icon-bars"></i> Navigations</a>
                         <ul class="uk-nav-sub">
                             <li><a href="nav.html">Nav</a></li>
                             <li><a href="navbar.html">Navbar</a></li>
@@ -519,7 +673,7 @@
                             <li><a href="tab.html">Tab</a></li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="#"><i class="uk-icon-check"></i> Elements</a>
+                    <li class="uk-parent"><a href="grid.html#"><i class="uk-icon-check"></i> Elements</a>
                         <ul class="uk-nav-sub">
                             <li><a href="list.html">List</a></li>
                             <li><a href="description-list.html">Description list</a></li>
@@ -527,7 +681,7 @@
                             <li><a href="form.html">Form</a></li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="#"><i class="uk-icon-folder-open"></i> Common</a>
+                    <li class="uk-parent"><a href="grid.html#"><i class="uk-icon-folder-open"></i> Common</a>
                         <ul class="uk-nav-sub">
                             <li><a href="button.html">Button</a></li>
                             <li><a href="icon.html">Icon</a></li>
@@ -537,12 +691,11 @@
                             <li><a href="thumbnail.html">Thumbnail</a></li>
                             <li><a href="overlay.html">Overlay</a></li>
                             <li><a href="progress.html">Progress</a></li>
-                            <li><a href="search.html">Search</a></li>
                             <li><a href="text.html">Text</a></li>
                             <li><a href="animation.html">Animation</a></li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="#"><i class="uk-icon-magic"></i> JavaScript</a>
+                    <li class="uk-parent"><a href="grid.html#"><i class="uk-icon-magic"></i> JavaScript</a>
                         <ul class="uk-nav-sub">
                             <li><a href="dropdown.html">Dropdown</a></li>
                             <li><a href="modal.html">Modal</a></li>
@@ -554,15 +707,31 @@
                             <li><a href="smooth-scroll.html">Smooth scroll</a></li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="#">Add-ons</a>
+                    <li class="uk-nav-header">Add-ons</li>
+                    <li class="uk-parent"><a href="grid.html#"><i class="uk-icon-bars"></i> Navigations</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="addons_markdownarea.html">Markdown Area</a></li>
-                            <li><a href="addons_sortable.html">Sortable</a></li>
+                            <li><a href="addons_dotnav.html">Dotnav</a></li>
+                            <li><a href="addons_slidenav.html">Slidenav</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="grid.html#"><i class="uk-icon-folder-open"></i> Common</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="addons_form-file.html">Form file</a></li>
+                            <li><a href="addons_form-password.html">Form password</a></li>
+                            <li><a href="addons_placeholder.html">Placeholder</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="grid.html#"><i class="uk-icon-magic"></i> JavaScript</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="addons_autocomplete.html">Autocomplete</a></li>
                             <li><a href="addons_datepicker.html">Datepicker</a></li>
-                            <li><a href="addons_timepicker.html">Timepicker</a></li>
-                            <li><a href="addons_sticky.html">Sticky</a></li>
+                            <li><a href="addons_markdownarea.html">Markdown area</a></li>
                             <li><a href="addons_notify.html">Notify</a></li>
-                            <li><a href="addons_form-password.html">Form Password</a></li>
+                            <li><a href="addons_search.html">Search</a></li>
+                            <li><a href="addons_sortable.html">Sortable</a></li>
+                            <li><a href="addons_sticky.html">Sticky</a></li>
+                            <li><a href="addons_timepicker.html">Timepicker</a></li>
+                            <li><a href="addons_upload.html">Upload</a></li>
                         </ul>
                     </li>
                 </ul>

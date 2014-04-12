@@ -30,7 +30,7 @@
                     <li><a href="customizer.html">Customizer</a></li>
                 </ul>
 
-                <a href="#tm-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+                <a href="modal.html#tm-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
 
                 <div class="uk-navbar-brand uk-navbar-center uk-visible-small"><img src="images/logo_uikit.svg" width="90" height="30" title="UIkit" alt="UIkit"></div>
 
@@ -80,7 +80,6 @@
                             <li><a href="thumbnail.html">Thumbnail</a></li>
                             <li><a href="overlay.html">Overlay</a></li>
                             <li><a href="progress.html">Progress</a></li>
-                            <li><a href="search.html">Search</a></li>
                             <li><a href="text.html">Text</a></li>
                             <li><a href="animation.html">Animation</a></li>
 
@@ -136,7 +135,7 @@
                             <h3 class="tm-article-subtitle">Example</h3>
 
                             <button class="uk-button" data-uk-modal="{target:'#modal'}">Open</button>
-                            <a href="#modal" data-uk-modal>Open</a>
+                            <a href="modal.html#modal" data-uk-modal>Open</a>
                             <div id="modal" class="uk-modal">
                                 <div class="uk-modal-dialog">
                                     <a href="" class="uk-modal-close uk-close"></a>
@@ -169,36 +168,6 @@
 
                             <hr class="uk-article-divider">
 
-                            <h2>Slide transition</h2>
-
-                            <p>By default the modal dialog simply fades in. To enhance it with a slide effect, add the <code>.uk-modal-dialog-slide</code> class.</p>
-
-                            <h3 class="tm-article-subtitle">Example</h3>
-
-                            <button class="uk-button" data-uk-modal="{target:'#modal-2'}">Open</button>
-                            <div id="modal-2" class="uk-modal">
-                                <div class="uk-modal-dialog  uk-modal-dialog-slide">
-                                    <a href="" class="uk-modal-close uk-close"></a>
-                                    <h1>Headline</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                            </div>
-
-                            <h3 class="tm-article-subtitle">Markup</h3>
-
-<pre><code>&lt;!-- This is the anchor toggling the modal --&gt;
-&lt;a href="#my-id" data-uk-modal&gt;...&lt;/a&gt;
-
-&lt;!-- This is the modal --&gt;
-&lt;div id="my-id" class="uk-modal"&gt;
-    &lt;div class="uk-modal-dialog uk-modal-dialog-slide"&gt;
-        &lt;a href="" class="uk-modal-close uk-close"&gt;&lt;/a&gt;
-        ...
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-                            <hr class="uk-article-divider">
-
                             <h2>Frameless modifier</h2>
 
                             <p>By default, the modal box has a padding. To avoid this and remove any framing, just add the <code>.uk-modal-dialog-frameless</code> class. This can be useful, if you want to use the modal as a lightbox for your images. The close button will adjust its position automatically to the frameless dialog.</p>
@@ -209,7 +178,7 @@
                             <div id="modal-3" class="uk-modal">
                                 <div class="uk-modal-dialog uk-modal-dialog-frameless">
                                     <a href="" class="uk-modal-close uk-close uk-close-alt"></a>
-                                    <img src="http://placekitten.com/600/400" alt="">
+                                    <img src="images/placeholder_600x400.svg" width="600" height="400" alt="">
                                 </div>
                             </div>
 
@@ -230,9 +199,77 @@
 
                         <hr class="uk-article-divider">
 
-                        <h2>Javascript</h2>
+                        <h2>Large dialog modifier</h2>
 
-                        <p>You cand handle modal dialogs via raw javascript.</p>
+                        <p>To apply the site's container width to the modal dialog, just add the <code>.uk-modal-dialog-large</code> class.</p>
+
+                        <h3 class="tm-article-subtitle">Example</h3>
+
+                        <a href="modal.html#modal-4" class="uk-button" data-uk-modal>Open</a>
+                        <div id="modal-4" class="uk-modal">
+                            <div class="uk-modal-dialog uk-modal-dialog-large">
+                                <button type="button" class="uk-modal-close uk-close"></button>
+                                <h1>Headline</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+
+<h3 class="tm-article-subtitle">Markup</h3>
+
+<pre><code>&lt;div class="uk-modal-dialog uk-modal-dialog-large"&gt;...&lt;/div&gt;</code></pre>
+
+                        <hr class="uk-article-divider">
+
+                        <h2>Overflow container in modal</h2>
+
+                        <p>You can also display the modal's content in a scrollable container. Just add the <code>.uk-overflow-container</code> class to a <code>&lt;div&gt;</code> element inside the modal dialog. The modal will automatically expand and fill the site's height.</p>
+
+                        <h3 class="tm-article-subtitle">Example</h3>
+
+                        <a href="modal.html#modal-5" class="uk-button" data-uk-modal>Open</a>
+                        <div id="modal-5" class="uk-modal">
+                            <div class="uk-modal-dialog uk-modal-dialog-large">
+                                <button type="button" class="uk-modal-close uk-close"></button>
+                                <h1>Headline</h1>
+                                <h2>Some text above the scrollable box</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <div class="uk-overflow-container">
+                                    <h2>Overflow container</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                                <h2>Some text below the overflow container</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+
+<h3 class="tm-article-subtitle">Markup</h3>
+
+<pre><code>&lt;div class="uk-modal-dialog"&gt;
+    &lt;p&gt;...&lt;/p&gt;
+    &lt;div class="uk-overflow-container"&gt;...&lt;/div&gt;
+    &lt;p&gt;...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+                        <hr class="uk-article-divider">
+
+                        <h2>JavaScript</h2>
+
+                        <p>You can handle modal dialogs via raw javascript.</p>
 
                         <h3 class="tm-article-subtitle">Example</h3>
 
@@ -293,27 +330,29 @@ if ( modal.isActive() ) {
             <div class="uk-offcanvas-bar">
 
                 <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav="{multiple:true}">
-                    <li class="uk-parent"><a href="#">Documentation</a>
+                    <li class="uk-parent"><a href="modal.html#">Documentation</a>
                         <ul class="uk-nav-sub">
                             <li><a href="documentation_get-started.html">Get started</a></li>
                             <li><a href="documentation_how-to-customize.html">How to customize</a></li>
+                            <li><a href="documentation_layouts.html">Layout examples</a></li>
                             <li><a href="components.html">Components</a></li>
                             <li><a href="addons.html">Add-ons</a></li>
                             <li><a href="documentation_project-structure.html">Project structure</a></li>
                             <li><a href="documentation_create-a-theme.html">Create a theme</a></li>
                             <li><a href="documentation_create-a-style.html">Create a style</a></li>
                             <li><a href="documentation_customizer-json.html">Customizer.json</a></li>
+                            <li><a href="documentation_javascript.html">JavaScript</a></li>
                         </ul>
                     </li>
                     <li class="uk-nav-header">Components</li>
-                    <li class="uk-parent"><a href="#"><i class="uk-icon-wrench"></i> Defaults</a>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-wrench"></i> Defaults</a>
                         <ul class="uk-nav-sub">
                             <li><a href="normalize.html">Normalize</a></li>
                             <li><a href="base.html">Base</a></li>
                             <li><a href="print.html">Print</a></li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="#"><i class="uk-icon-th-large"></i> Layout</a>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-th-large"></i> Layout</a>
                         <ul class="uk-nav-sub">
                             <li><a href="grid.html">Grid</a></li>
                             <li><a href="panel.html">Panel</a></li>
@@ -322,7 +361,7 @@ if ( modal.isActive() ) {
                             <li><a href="utility.html">Utility</a></li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="#"><i class="uk-icon-bars"></i> Navigations</a>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-bars"></i> Navigations</a>
                         <ul class="uk-nav-sub">
                             <li><a href="nav.html">Nav</a></li>
                             <li><a href="navbar.html">Navbar</a></li>
@@ -332,7 +371,7 @@ if ( modal.isActive() ) {
                             <li><a href="tab.html">Tab</a></li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="#"><i class="uk-icon-check"></i> Elements</a>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-check"></i> Elements</a>
                         <ul class="uk-nav-sub">
                             <li><a href="list.html">List</a></li>
                             <li><a href="description-list.html">Description list</a></li>
@@ -340,7 +379,7 @@ if ( modal.isActive() ) {
                             <li><a href="form.html">Form</a></li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="#"><i class="uk-icon-folder-open"></i> Common</a>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-folder-open"></i> Common</a>
                         <ul class="uk-nav-sub">
                             <li><a href="button.html">Button</a></li>
                             <li><a href="icon.html">Icon</a></li>
@@ -350,12 +389,11 @@ if ( modal.isActive() ) {
                             <li><a href="thumbnail.html">Thumbnail</a></li>
                             <li><a href="overlay.html">Overlay</a></li>
                             <li><a href="progress.html">Progress</a></li>
-                            <li><a href="search.html">Search</a></li>
                             <li><a href="text.html">Text</a></li>
                             <li><a href="animation.html">Animation</a></li>
                         </ul>
                     </li>
-                    <li class="uk-parent uk-active"><a href="#"><i class="uk-icon-magic"></i> JavaScript</a>
+                    <li class="uk-parent uk-active"><a href="modal.html#"><i class="uk-icon-magic"></i> JavaScript</a>
                         <ul class="uk-nav-sub">
                             <li><a href="dropdown.html">Dropdown</a></li>
                             <li><a href="modal.html">Modal</a></li>
@@ -367,15 +405,31 @@ if ( modal.isActive() ) {
                             <li><a href="smooth-scroll.html">Smooth scroll</a></li>
                         </ul>
                     </li>
-                    <li class="uk-parent"><a href="#">Add-ons</a>
+                    <li class="uk-nav-header">Add-ons</li>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-bars"></i> Navigations</a>
                         <ul class="uk-nav-sub">
-                            <li><a href="addons_markdownarea.html">Markdown Area</a></li>
-                            <li><a href="addons_sortable.html">Sortable</a></li>
+                            <li><a href="addons_dotnav.html">Dotnav</a></li>
+                            <li><a href="addons_slidenav.html">Slidenav</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-folder-open"></i> Common</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="addons_form-file.html">Form file</a></li>
+                            <li><a href="addons_form-password.html">Form password</a></li>
+                            <li><a href="addons_placeholder.html">Placeholder</a></li>
+                        </ul>
+                    </li>
+                    <li class="uk-parent"><a href="modal.html#"><i class="uk-icon-magic"></i> JavaScript</a>
+                        <ul class="uk-nav-sub">
+                            <li><a href="addons_autocomplete.html">Autocomplete</a></li>
                             <li><a href="addons_datepicker.html">Datepicker</a></li>
-                            <li><a href="addons_timepicker.html">Timepicker</a></li>
-                            <li><a href="addons_sticky.html">Sticky</a></li>
+                            <li><a href="addons_markdownarea.html">Markdown area</a></li>
                             <li><a href="addons_notify.html">Notify</a></li>
-                            <li><a href="addons_form-password.html">Form Password</a></li>
+                            <li><a href="addons_search.html">Search</a></li>
+                            <li><a href="addons_sortable.html">Sortable</a></li>
+                            <li><a href="addons_sticky.html">Sticky</a></li>
+                            <li><a href="addons_timepicker.html">Timepicker</a></li>
+                            <li><a href="addons_upload.html">Upload</a></li>
                         </ul>
                     </li>
                 </ul>
